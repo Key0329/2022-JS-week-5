@@ -34864,8 +34864,6 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 body {
@@ -34942,6 +34940,19 @@ body {
 .ticketCard-icon {
   width: 20px;
   height: 20px;
+}
+
+.ticketCard-img {
+  max-height: 180px;
+}
+
+.ticketCard-img img {
+  height: 100%;
+  width: 100%;
+  -o-object-position: center center;
+     object-position: center center;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 /*# sourceMappingURL=all.css.map */

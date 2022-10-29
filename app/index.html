@@ -1,5 +1,5 @@
 ---
-title: Boostrap Index
+title: 2022 JS 直播班第五周主線
 layout: ./app/layout.ejs
 engine: ejs
 current: index
@@ -17,7 +17,7 @@ current: index
             <h1 class="h3 d-flex align-items-center text-primary pb-1 border-bottom border-3 border-primary mb-8"><span
                     class="addTicket-icon material-symbols-outlined me-2">add_circle</span>新增旅遊套票</h1>
 
-            <form class="d-flex flex-column">
+            <form class="addTicketForm d-flex flex-column">
 
                 <div class="ticket-input d-flex align-items-center mb-4">
                     <label for="ticketName" class="text-primary me-8 flex-grow-0">套票名稱</label>
@@ -32,7 +32,7 @@ current: index
                 </div>
 
                 <div class="ticket-input d-flex align-items-center mb-4">
-                    <label for="ticketName" class="text-primary me-8 flex-grow-0">景點地區</label>
+                    <label for="ticketRegion" class="text-primary me-8 flex-grow-0">景點地區</label>
                     <select name="景點地區" id="ticketRegion"
                         class="text-dark bg-gray border-0 border-bottom border-primary py-2 ps-3 pe-0 flex-grow-1">
                         <option value="台北">台北</option>
@@ -70,7 +70,7 @@ current: index
                         placeholder="請填寫套票描述（限 100 字）"></textarea>
                 </div>
 
-                <div class="addBtn btn btn-primary py-3 px-10 fs-4 ms-auto">新增套票</div>
+                <a href="#" class="addBtn btn btn-primary py-3 px-10 fs-4 ms-auto">新增套票</a>
 
             </form>
 
@@ -90,73 +90,33 @@ current: index
                 <option value="台中">台中</option>
                 <option value="高雄">高雄</option>
             </select>
-            <p class="search-result">本次搜尋共 6 筆資料</p>
+            <p class="search-result">本次搜尋共 3 筆資料</p>
         </div>
 
-        <div class="ticketCard-area">
-            <ul class="row list-unstyled">
-                <li class="col-4">
-                    <div class="ticketCard">
-                        <div class="ticketCard-img position-relative">
-                            <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/js_week5/travel_1.png?raw=true">
-                            <p class="ticketCard-region py-2 px-5 bg-secondary text-white position-absolute rounded-end">台北</p>
-                            <p class="ticketCard-rate py-1 px-2 bg-primary text-white position-absolute rounded-end">8.6</p>
-                        </div>
-                        <div class="ticketCard-body bg-white pt-5 px-5 pb-4">
+        <ul class="ticketCard-area row list-unstyled">
+            <!-- <li class="col-4">
+                <div class="ticketCard h-100 d-flex flex-column">
+                    <div class="ticketCard-img position-relative flex-grow-0">
+                        <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/js_week5/travel_1.png?raw=true">
+                        <p class="ticketCard-region py-2 px-5 bg-secondary text-white position-absolute rounded-end">台北</p>
+                        <p class="ticketCard-rate py-1 px-2 bg-primary text-white position-absolute rounded-end">8.6</p>
+                    </div>
+                    <div class="ticketCard-body d-flex flex-column justify-content-between bg-white pt-5 px-5 pb-4 flex-grow-1">
+                        <div>
                             <h2 class="h3 pb-1 border-bottom border-primary text-primary mb-4">綠島自由行套裝行程</h2>
-                            <p class="ticketCard-body-text mb-6">嚴選超高CP值綠島自由行套裝行程，多種綠島套裝組合，提供台東綠島來回船票、綠島環島機車、綠島民宿住宿，行程加贈『綠島浮潛體驗』以及『綠島生態導覽』，讓你用輕鬆的綠島套裝自由行，也能深度認識綠島在地文化。</p>
-                            <div class="d-flex justify-content-between">
-                                <p class="text-primary d-flex align-items-center"><span class="ticketCard-icon material-symbols-outlined me-2">error</span>剩下最後 8 組</p>
-                                <div class="d-flex align-items-center text-primary">
-                                    <p class="me-1">TWD</p>
-                                    <p class="fs-2 roboto">$1,280</p>
-                                </div>
+                            <p class="ticketCard-body-text">嚴選超高CP值綠島自由行套裝行程，多種綠島套裝組合，提供台東綠島來回船票、綠島環島機車、綠島民宿住宿</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <p class="text-primary d-flex align-items-center"><span class="ticketCard-icon material-symbols-outlined me-2">error</span>剩下最後 8 組</p>
+                            <div class="d-flex align-items-center text-primary">
+                                <p class="me-1">TWD</p>
+                                <p class="fs-2 roboto">$1,280</p>
                             </div>
                         </div>
                     </div>
-                </li>
-                <li class="col-4">
-                    <div class="ticketCard">
-                        <div class="ticketCard-img position-relative">
-                            <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/js_week5/travel_1.png?raw=true">
-                            <p class="ticketCard-region py-2 px-5 bg-secondary text-white position-absolute rounded-end">台北</p>
-                            <p class="ticketCard-rate py-1 px-2 bg-primary text-white position-absolute rounded-end">8.6</p>
-                        </div>
-                        <div class="ticketCard-body bg-white pt-5 px-5 pb-4">
-                            <h2 class="h3 pb-1 border-bottom border-primary text-primary mb-4">綠島自由行套裝行程</h2>
-                            <p class="ticketCard-body-text mb-6">嚴選超高CP值綠島自由行套裝行程，多種綠島套裝組合，提供台東綠島來回船票、綠島環島機車、綠島民宿住宿，行程加贈『綠島浮潛體驗』以及『綠島生態導覽』，讓你用輕鬆的綠島套裝自由行，也能深度認識綠島在地文化。</p>
-                            <div class="d-flex justify-content-between">
-                                <p class="text-primary d-flex align-items-center"><span class="ticketCard-icon material-symbols-outlined me-2">error</span>剩下最後 8 組</p>
-                                <div class="d-flex align-items-center text-primary">
-                                    <p class="me-1">TWD</p>
-                                    <p class="fs-2 roboto">$1,280</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-4">
-                    <div class="ticketCard">
-                        <div class="ticketCard-img position-relative">
-                            <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/js_week5/travel_1.png?raw=true">
-                            <p class="ticketCard-region py-2 px-5 bg-secondary text-white position-absolute rounded-end">台北</p>
-                            <p class="ticketCard-rate py-1 px-2 bg-primary text-white position-absolute rounded-end">8.6</p>
-                        </div>
-                        <div class="ticketCard-body bg-white pt-5 px-5 pb-4">
-                            <h2 class="h3 pb-1 border-bottom border-primary text-primary mb-4">綠島自由行套裝行程</h2>
-                            <p class="ticketCard-body-text mb-6">嚴選超高CP值綠島自由行套裝行程，多種綠島套裝組合，提供台東綠島來回船票、綠島環島機車、綠島民宿住宿，行程加贈『綠島浮潛體驗』以及『綠島生態導覽』，讓你用輕鬆的綠島套裝自由行，也能深度認識綠島在地文化。</p>
-                            <div class="d-flex justify-content-between">
-                                <p class="text-primary d-flex align-items-center"><span class="ticketCard-icon material-symbols-outlined me-2">error</span>剩下最後 8 組</p>
-                                <div class="d-flex align-items-center text-primary">
-                                    <p class="me-1">TWD</p>
-                                    <p class="fs-2 roboto">$1,280</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
+                </div>
+            </li> -->
+        </ul>
 
     </div>
 

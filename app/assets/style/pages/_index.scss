@@ -63,4 +63,13 @@
         width: 20px;
         height: 20px;
     }
+    &-img{
+        max-height: 180px;
+        img{
+            height: 100%;
+            width: 100%;
+            object-position: center center;
+            object-fit: cover;
+        }
+    }
 }

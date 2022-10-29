@@ -157,6 +157,8 @@ function addTicket(arr) {
 			showConfirmButton: false,
 			timer: 1500
 		})
+
+		areaSearch.value = "全部地區";
 	})
 
 }

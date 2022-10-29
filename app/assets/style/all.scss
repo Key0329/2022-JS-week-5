@@ -1,0 +1,14 @@
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../style/helpers/variables";
+@import "../style/helpers/utilities";
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+@import "../style/base/base";
+@import "../style/helpers/mixin";
+
+@import "../style/pages/index";
+
+

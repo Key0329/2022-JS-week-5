@@ -1,9 +1,15 @@
-a{
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+a {
     text-decoration: none;
     display: block;
 }
 
-img{
+img {
     display: block;
     max-width: 100%;
     height: auto;
@@ -14,3 +20,6 @@ body {
     line-height: 1.5;
 }
 
+.roboto{
+    font-family: 'roboto';
+}

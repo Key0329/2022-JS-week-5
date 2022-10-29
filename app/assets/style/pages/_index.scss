@@ -1,3 +1,66 @@
 .addTicket{
     width: 920px;
+    border-radius: 12px;
+    box-shadow: 0 3px 6px #00000029;
+    
+    &-logo{
+        img{
+            width: 350px;
+        }
+    }
+    
+    &-panel{
+        width: 350px;
+    }
+
+    &-icon{
+        width: 20px;
+        height: 20px;
+    }
+    textarea{
+        min-height: 112px;
+    }
+
+    .addBtn{
+        border-radius: 4.8px;
+    }
+}
+
+.main-content{
+    background-color: #F7F7F7;
+}
+
+.search{
+    &-area{
+        width: 920px;
+    }
+
+    &-region{
+        width: 255px;
+        color: #818A91;
+        border-color: #CED4DA;
+    }
+
+    &-result{
+        color: #818A91;
+    }
+}
+
+.ticketCard{
+    box-shadow: 0 3px 6px #00000029;
+    &-region{
+        top: -12px;
+    }
+    &-rate{
+        bottom: -16px;
+    }
+    &-body{
+        &-text{
+            color: #818A91;
+        }
+    }
+    &-icon{
+        width: 20px;
+        height: 20px;
+    }
 }

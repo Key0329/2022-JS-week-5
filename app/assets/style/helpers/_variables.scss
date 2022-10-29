@@ -62,7 +62,7 @@ $colors: (
   "cyan":       $cyan,
   "white":      $white,
   "black":      $black,
-  "gray":       $gray-600,
+  "gray":       #FAFAFA,
   "gray-dark":  $gray-800
 ) !default;
 // scss-docs-end colors-map
@@ -75,9 +75,10 @@ $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         #F0F0F0 !default;
-$dark:          #808080 !default;
+$dark:          #818A91 !default;
 $black:         $black;
 $white:         $white;
+$gray:          #FAFAFA;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -92,6 +93,7 @@ $theme-colors: (
   "dark":       $dark,
   "black":       $black,
   "white":       $white,
+  "gray":        $gray,
 ) !default;
 // scss-docs-end theme-colors-map
 
@@ -283,6 +285,7 @@ $spacers: (
   26: $spacer * 6.5,
   27: $spacer * 6.75,
   28: $spacer * 7,
+  30: $spacer * 7.5,
   32: $spacer * 8,
   34: $spacer * 8.5,
   36: $spacer * 9,
@@ -383,7 +386,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns:                12 !default;
-$grid-gutter-width:           1.5rem !default;
+$grid-gutter-width:           30px; //1.5rem !default;
 $grid-row-columns:            6 !default;
 
 $gutters: $spacers !default;
@@ -457,8 +460,8 @@ $aspect-ratios: (
 
 // scss-docs-start font-variables
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      'Noto Sans TC', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
-$font-family-monospace:       'Noto Sans TC', SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-sans-serif:      'Noto Sans TC','Roboto', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace:       'Noto Sans TC','Roboto', SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 // stylelint-enable value-keyword-case
 $font-family-base:            var(--#{$variable-prefix}font-sans-serif) !default;
 $font-family-code:            var(--#{$variable-prefix}font-monospace) !default;

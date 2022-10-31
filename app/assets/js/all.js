@@ -1,34 +1,36 @@
-let data = [
-	{
-		"id": 0,
-		"name": "肥宅心碎賞櫻3日",
-		"imgUrl": "https://images.unsplash.com/photo-1522383225653-ed111181a951?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1655&q=80",
-		"area": "高雄",
-		"description": "賞櫻花最佳去處。肥宅不得不去的超讚景點！",
-		"group": 87,
-		"price": 1400,
-		"rate": 10
-	},
-	{
-		"id": 1,
-		"name": "貓空纜車雙程票",
-		"imgUrl": "https://images.unsplash.com/photo-1501393152198-34b240415948?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-		"area": "台北",
-		"description": "乘坐以透明強化玻璃為地板的「貓纜之眼」水晶車廂，享受騰雲駕霧遨遊天際之感",
-		"group": 99,
-		"price": 240,
-		"rate": 2
-	},
-	{
-		"id": 2,
-		"name": "台中谷關溫泉會1日",
-		"imgUrl": "https://images.unsplash.com/photo-1535530992830-e25d07cfa780?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-		"area": "台中",
-		"description": "全館客房均提供谷關無色無味之優質碳酸原湯，並取用八仙山之山冷泉供蒞臨貴賓沐浴及飲水使用。",
-		"group": 20,
-		"price": 1765,
-		"rate": 7
-	}
+/* eslint-disable no-alert */
+const data = [
+    {
+        id: 0,
+        name: '肥宅心碎賞櫻3日',
+        imgUrl: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1655&q=80',
+        area: '高雄',
+        description: '賞櫻花最佳去處。肥宅不得不去的超讚景點！',
+        group: 87,
+        price: 1400,
+        rate: 10,
+    },
+    {
+        id: 1,
+        name: '貓空纜車雙程票',
+        imgUrl: 'https://images.unsplash.com/photo-1501393152198-34b240415948?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80',
+        area: '台北',
+        description: '乘坐以透明強化玻璃為地板的「貓纜之眼」水晶車廂，享受騰雲駕霧遨遊天際之感',
+        group: 99,
+        price: 240,
+        rate: 2,
+    },
+    {
+        id: 2,
+        name: '台中谷關溫泉會1日',
+        imgUrl: 'https://images.unsplash.com/photo-1535530992830-e25d07cfa780?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80',
+        area: '台中',
+        description:
+            '全館客房均提供谷關無色無味之優質碳酸原湯，並取用八仙山之山冷泉供蒞臨貴賓沐浴及飲水使用。',
+        group: 20,
+        price: 1765,
+        rate: 7,
+    },
 ];
 
 // -------------------------------- 初始渲染 ------------------------------------
@@ -36,10 +38,9 @@ let data = [
 const ticketCardArea = document.querySelector('.ticketCard-area');
 
 function render(arr) {
-	let str = "";
-	arr.forEach(item => {
-		str +=
-			`
+    let str = '';
+    arr.forEach((item) => {
+        str += `
 		<li class="col-4 mb-10">
 			<div class="ticketCard h-100 d-flex flex-column">
 				<div class="ticketCard-img position-relative flex-grow-0">
@@ -62,10 +63,10 @@ function render(arr) {
 				</div>
 			</div>
 		</li>
-		`
-	})
+		`;
+    });
 
-	ticketCardArea.innerHTML = str;
+    ticketCardArea.innerHTML = str;
 }
 
 render(data);
@@ -76,22 +77,19 @@ const areaSearch = document.querySelector('.search-region');
 const searchResult = document.querySelector('.search-result');
 
 function areaSelector(arr) {
+    areaSearch.addEventListener('change', (e) => {
+        // console.log(e.target.value);
+        let newData = [];
 
-	areaSearch.addEventListener("change", function (e) {
-		// console.log(e.target.value);
-		let newData = [];
-
-		if (e.target.value === "全部地區") {
-			newData = arr;
-		} else {
-			newData = arr.filter(item => item.area === e.target.value);
-			// console.log(newData);
-		}
-		render(newData);
-		searchResult.innerHTML = `本次搜尋共 ${newData.length} 筆資料`;
-
-	})
-
+        if (e.target.value === '全部地區') {
+            newData = arr;
+        } else {
+            newData = arr.filter((item) => item.area === e.target.value);
+            // console.log(newData);
+        }
+        render(newData);
+        searchResult.innerHTML = `本次搜尋共 ${newData.length} 筆資料`;
+    });
 }
 
 areaSelector(data);
@@ -118,50 +116,47 @@ const ticketRate = document.querySelector('#ticketRate');
 const ticketPrice = document.querySelector('#ticketPrice');
 const ticketDescription = document.querySelector('#ticketDescription');
 
-
 function addTicket(arr) {
+    // eslint-disable-next-line consistent-return
+    addTicketBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        // console.log(e.target);
 
-	addTicketBtn.addEventListener('click', (e) => {
-		e.preventDefault();
-		// console.log(e.target);
+        const typeLength = ticketDescription.value.length;
 
-		const typeLength = ticketDescription.value.length;
+        if (typeLength > 100) {
+            return alert('最多不超過 100 字');
+        }
+        if (ticketRate.value < 0 || ticketRate.value > 10) {
+            return alert('星級區間為 1-10 分');
+        }
 
-		if (typeLength > 100) {
-			return alert('最多不超過 100 字');
-		}
-		if (ticketRate.value < 0 || ticketRate.value > 10) {
-			return alert('星級區間為 1-10 分');
-		}
+        const newTicket = {
+            id: arr.length,
+            name: ticketName.value,
+            imgUrl: ticketPicture.value,
+            area: ticketRegion.value,
+            description: ticketDescription.value,
+            group: ticketNum.value,
+            price: ticketPrice.value,
+            rate: ticketRate.value,
+        };
 
-		let newTicket = {
-			"id": arr.length,
-			"name": ticketName.value,
-			"imgUrl": ticketPicture.value,
-			"area": ticketRegion.value,
-			"description": ticketDescription.value,
-			"group": ticketNum.value,
-			"price": ticketPrice.value,
-			"rate": ticketRate.value
-		};
+        arr.push(newTicket);
 
-		arr.push(newTicket);
+        render(arr);
 
-		render(arr);
+        searchResult.innerHTML = `本次搜尋共 ${arr.length} 筆資料`;
 
-		searchResult.innerHTML = `本次搜尋共 ${arr.length} 筆資料`;
+        // eslint-disable-next-line no-undef
+        Swal.fire({
+            title: '新增套票成功',
+            showConfirmButton: false,
+            timer: 1500,
+        });
 
-		Swal.fire({
-			icon: 'success',
-			title: '新增套票成功',
-			showConfirmButton: false,
-			timer: 1500
-		})
-
-		areaSearch.value = "全部地區";
-	})
-
+        areaSearch.value = '全部地區';
+    });
 }
 
 addTicket(data);
-

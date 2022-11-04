@@ -19,82 +19,114 @@
 
   
 <div class="container pt-30">
-    <section class="addTicket py-15 px-24 mb-25 mx-auto d-flex justify-content-between ">
+    <section class="addTicket py-15 px-24 mb-25 mx-auto d-flex justify-content-between">
         <div class="addTicket-logo">
-            <img class="mb-5"
-                src="https://github.com/hexschool/2022-web-layout-training/blob/main/js_week5/main_img.png?raw=true">
-            <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/js_week5/logo.png?raw=true">
+            <img
+                class="mb-5"
+                src="https://github.com/hexschool/2022-web-layout-training/blob/main/js_week5/main_img.png?raw=true"
+            />
+            <img
+                src="https://github.com/hexschool/2022-web-layout-training/blob/main/js_week5/logo.png?raw=true"
+            />
         </div>
         <div class="addTicket-panel">
-
-            <h1 class="h3 d-flex align-items-center text-primary pb-1 border-bottom border-3 border-primary mb-8"><span
-                    class="addTicket-icon material-symbols-outlined me-2">add_circle</span>新增旅遊套票</h1>
+            <h1
+                class="h3 d-flex align-items-center text-primary pb-1 border-bottom border-3 border-primary mb-8"
+            >
+                <span class="addTicket-icon material-symbols-outlined me-2">add_circle</span
+                >新增旅遊套票
+            </h1>
 
             <form class="addTicketForm d-flex flex-column">
-
                 <div class="ticket-input d-flex align-items-center mb-4">
                     <label for="ticketName" class="text-primary me-8 flex-grow-0">套票名稱</label>
-                    <input type="text" placeholder="請填寫套票名稱" id="ticketName"
-                        class="text-dark bg-gray border-0 border-bottom border-primary py-2 ps-3 pe-0 flex-grow-1">
+                    <input
+                        type="text"
+                        placeholder="請填寫套票名稱"
+                        id="ticketName"
+                        class="text-dark bg-gray border-0 border-bottom border-primary py-2 ps-3 pe-0 flex-grow-1"
+                    />
                 </div>
 
                 <div class="ticket-input d-flex align-items-center mb-4">
-                    <label for="ticketPicture" class="text-primary me-8 flex-grow-0">圖片網址</label>
-                    <input type="text" placeholder="請填寫圖片網址" id="ticketPicture"
-                        class="text-dark bg-gray border-0 border-bottom border-primary py-2 ps-3 pe-0 flex-grow-1">
+                    <label for="ticketPicture" class="text-primary me-8 flex-grow-0"
+                        >圖片網址</label
+                    >
+                    <input
+                        type="text"
+                        placeholder="請填寫圖片網址"
+                        id="ticketPicture"
+                        class="text-dark bg-gray border-0 border-bottom border-primary py-2 ps-3 pe-0 flex-grow-1"
+                    />
                 </div>
 
                 <div class="ticket-input d-flex align-items-center mb-4">
                     <label for="ticketRegion" class="text-primary me-8 flex-grow-0">景點地區</label>
-                    <select name="景點地區" id="ticketRegion"
-                        class="text-dark bg-gray border-0 border-bottom border-primary py-2 ps-3 pe-0 flex-grow-1">
+                    <select
+                        name="景點地區"
+                        id="ticketRegion"
+                        class="text-dark bg-gray border-0 border-bottom border-primary py-2 ps-3 pe-0 flex-grow-1"
+                    >
                         <option value="台北">台北</option>
                         <option value="台中">台中</option>
                         <option value="高雄">高雄</option>
                     </select>
-
                 </div>
 
                 <div class="ticket-input d-flex align-items-center mb-4">
                     <label for="ticketPrice" class="text-primary me-8 flex-grow-0">套票金額</label>
-                    <input type="number" placeholder="請填寫套票金額" id="ticketPrice"
+                    <input
+                        type="number"
+                        placeholder="請填寫套票金額"
+                        id="ticketPrice"
                         class="text-dark bg-gray border-0 border-bottom border-primary py-2 ps-3 pe-0 flex-grow-1"
-                        min="0">
+                        min="0"
+                    />
                 </div>
 
                 <div class="ticket-input d-flex align-items-center mb-4">
                     <label for="ticketNum" class="text-primary me-8 flex-grow-0">套票組數</label>
-                    <input type="number" placeholder="請填寫套票組數" id="ticketNum"
+                    <input
+                        type="number"
+                        placeholder="請填寫套票組數"
+                        id="ticketNum"
                         class="text-dark bg-gray border-0 border-bottom border-primary py-2 ps-3 pe-0 flex-grow-1"
-                        min="1">
+                        min="1"
+                    />
                 </div>
 
                 <div class="ticket-input d-flex align-items-center mb-4">
                     <label for="ticketRate" class="text-primary me-8 flex-grow-0">套票星級</label>
-                    <input type="number" placeholder="請填寫套票星級" id="ticketRate"
+                    <input
+                        type="number"
+                        placeholder="請填寫套票星級"
+                        id="ticketRate"
                         class="text-dark bg-gray border-0 border-bottom border-primary py-2 ps-3 pe-0 flex-grow-1"
-                        min="1" max="10">
+                        min="1"
+                        max="10"
+                    />
                 </div>
 
                 <div class="ticket-input d-flex align-items-center mb-6">
-                    <label for="ticketDescription" class="text-primary me-8 flex-grow-0">套票描述</label>
-                    <textarea name="套票描述" id="ticketDescription"
+                    <label for="ticketDescription" class="text-primary me-8 flex-grow-0"
+                        >套票描述</label
+                    >
+                    <textarea
+                        name="套票描述"
+                        id="ticketDescription"
                         class="text-dark bg-gray border-0 border-bottom border-primary py-2 ps-3 pe-0 flex-grow-1"
-                        placeholder="請填寫套票描述（限 100 字）"></textarea>
+                        placeholder="請填寫套票描述（限 100 字）"
+                    ></textarea>
                 </div>
 
                 <a href="#" class="addBtn btn btn-primary py-3 px-10 fs-4 ms-auto">新增套票</a>
-
             </form>
-
         </div>
     </section>
 </div>
 
 <section class="main-content pt-14 pb-30">
-
     <div class="container">
-
         <div class="search-area d-flex mx-auto align-items-center mb-13">
             <select name="地區搜尋" class="search-region py-2 px-3 me-8">
                 <option value="地區搜尋" disabled selected hidden>地區搜尋</option>
@@ -102,6 +134,7 @@
                 <option value="台北">台北</option>
                 <option value="台中">台中</option>
                 <option value="高雄">高雄</option>
+                <option value="花蓮">花蓮</option>
             </select>
             <p class="search-result">本次搜尋共 3 筆資料</p>
         </div>
@@ -130,13 +163,18 @@
                 </div>
             </li> -->
         </ul>
-
+        <div class="cantFind-area d-none">
+            <h3>查無此關鍵字資料</h3>
+            <img
+                src="https://github.com/hexschool/2022-web-layout-training/blob/main/js_week5/no_found.png?raw=true"
+                alt=""
+            />
+        </div>
     </div>
-
 </section>
 
 
-    <script src="sweetalert2.all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./assets/js/vendors.js"></script>
     <script src="./assets/js/all.js"></script>

@@ -1,71 +1,71 @@
-.addTicket{
+.addTicket {
     width: 920px;
     border-radius: 12px;
     box-shadow: 0 3px 6px #00000029;
-    
-    &-logo{
-        img{
+
+    &-logo {
+        img {
             width: 350px;
         }
     }
-    
-    &-panel{
+
+    &-panel {
         width: 350px;
     }
 
-    &-icon{
+    &-icon {
         width: 20px;
         height: 20px;
     }
-    textarea{
+    textarea {
         min-height: 112px;
     }
 
-    .addBtn{
+    .addBtn {
         border-radius: 4.8px;
     }
 }
 
-.main-content{
-    background-color: #F7F7F7;
+.main-content {
+    background-color: #f7f7f7;
 }
 
-.search{
-    &-area{
-        width: 920px;
+.search {
+    &-area {
+        // width: 920px;
     }
 
-    &-region{
+    &-region {
         width: 255px;
-        color: #818A91;
-        border-color: #CED4DA;
+        color: #818a91;
+        border-color: #ced4da;
     }
 
-    &-result{
-        color: #818A91;
+    &-result {
+        color: #818a91;
     }
 }
 
-.ticketCard{
+.ticketCard {
     box-shadow: 0 3px 6px #00000029;
-    &-region{
+    &-region {
         top: -12px;
     }
-    &-rate{
+    &-rate {
         bottom: -16px;
     }
-    &-body{
-        &-text{
-            color: #818A91;
+    &-body {
+        &-text {
+            color: #818a91;
         }
     }
-    &-icon{
+    &-icon {
         width: 20px;
         height: 20px;
     }
-    &-img{
+    &-img {
         max-height: 180px;
-        img{
+        img {
             height: 100%;
             width: 100%;
             object-position: center center;

@@ -33,16 +33,6 @@
 //     },
 // ];
 
-// eslint-disable-next-line no-undef
-axios
-    .get('https://raw.githubusercontent.com/hexschool/js-training/main/travelApi.json')
-    .then((response) => {
-        const { data } = response.data;
-        render(data);
-        areaSelector(data);
-        addTicket(data);
-    });
-
 // -------------------------------- 初始渲染 ------------------------------------
 
 const ticketCardArea = document.querySelector('.ticketCard-area');
@@ -77,6 +67,7 @@ function render(arr) {
     });
 
     ticketCardArea.innerHTML = str;
+    c3Chart(arr);
 }
 
 // render(data);
@@ -172,14 +163,73 @@ function addTicket(arr) {
 
         areaSearch.value = '全部地區';
 
-        ticketName.value = '';
-        ticketPicture.value = '';
-        ticketRegion.value = '';
-        ticketDescription.value = '';
-        ticketNum.value = '';
-        ticketPrice.value = '';
-        ticketRate.value = '';
+        // ticketName.value = '';
+        // ticketPicture.value = '';
+        // ticketRegion.value = '';
+        // ticketDescription.value = '';
+        // ticketNum.value = '';
+        // ticketPrice.value = '';
+        // ticketRate.value = '';
+
+        const formEl = document.querySelector('.addTicketForm');
+
+        formEl.reset();
+    });
+    c3Chart(arr);
+}
+
+// c3
+
+function c3Chart(arr) {
+    const totalObj = {};
+    arr.forEach((item) => {
+        if (totalObj[item.area] === undefined) {
+            totalObj[item.area] = 1;
+        } else {
+            totalObj[item.area] += 1;
+        }
+    });
+
+    const newData = [];
+    const area = Object.keys(totalObj);
+
+    area.forEach((item) => {
+        const array = [];
+        array.push(item);
+        array.push(totalObj[item]);
+        newData.push(array);
+    });
+
+    const chart = c3.generate({
+        bindto: '#chart',
+        data: {
+            columns: newData,
+            type: 'donut',
+            colors: {
+                台北: '#26C0C7',
+                台中: '#5151D3',
+                高雄: '#E68618',
+            },
+        },
+        donut: {
+            title: '套票地區比重',
+            width: '20',
+            label: {
+                show: false,
+            },
+        },
     });
 }
 
-// addTicket(data);
+// eslint-disable-next-line no-undef
+axios
+    .get('https://raw.githubusercontent.com/hexschool/js-training/main/travelApi.json')
+    .then((response) => {
+        const { data } = response.data;
+        render(data);
+        areaSelector(data);
+        addTicket(data);
+    })
+    .catch((error) => {
+        console.log(error);
+    });

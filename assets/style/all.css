@@ -34903,21 +34903,17 @@ body {
 }
 
 .main-content {
-  background-color: #F7F7F7;
-}
-
-.search-area {
-  width: 920px;
+  background-color: #f7f7f7;
 }
 
 .search-region {
   width: 255px;
-  color: #818A91;
-  border-color: #CED4DA;
+  color: #818a91;
+  border-color: #ced4da;
 }
 
 .search-result {
-  color: #818A91;
+  color: #818a91;
 }
 
 .ticketCard {
@@ -34934,7 +34930,7 @@ body {
 }
 
 .ticketCard-body-text {
-  color: #818A91;
+  color: #818a91;
 }
 
 .ticketCard-icon {

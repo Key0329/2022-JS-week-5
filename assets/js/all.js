@@ -34,14 +34,7 @@
 //         rate: 7,
 //     },
 // ];
-// eslint-disable-next-line no-undef
-axios.get('https://raw.githubusercontent.com/hexschool/js-training/main/travelApi.json').then(function (response) {
-  var data = response.data.data;
-  render(data);
-  areaSelector(data);
-  addTicket(data);
-}); // -------------------------------- 初始渲染 ------------------------------------
-
+// -------------------------------- 初始渲染 ------------------------------------
 var ticketCardArea = document.querySelector('.ticketCard-area');
 
 function render(arr) {
@@ -50,6 +43,7 @@ function render(arr) {
     str += "\n\t\t<li class=\"col-4 mb-10\">\n\t\t\t<div class=\"ticketCard h-100 d-flex flex-column\">\n\t\t\t\t<div class=\"ticketCard-img position-relative flex-grow-0\">\n\t\t\t\t\t<img src= \"".concat(item.imgUrl, "\">\n\t\t\t\t\t<p class=\"ticketCard-region py-2 px-5 bg-secondary text-white position-absolute rounded-end\">").concat(item.area, "</p>\n\t\t\t\t\t<p class=\"ticketCard-rate py-1 px-2 bg-primary text-white position-absolute rounded-end\">").concat(item.rate, "</p>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"ticketCard-body d-flex flex-column justify-content-between bg-white pt-5 px-5 pb-4 flex-grow-1\">\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<h2 class=\"h3 pb-1 border-bottom border-primary text-primary mb-4\">").concat(item.name, "</h2>\n\t\t\t\t\t\t<p class=\"ticketCard-body-text text-wrap\">").concat(item.description, "</p>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"d-flex justify-content-between\">\n\t\t\t\t\t\t<p class=\"text-primary d-flex align-items-center\"><span class=\"ticketCard-icon material-symbols-outlined me-2\">error</span>\u5269\u4E0B\u6700\u5F8C ").concat(item.group, " \u7D44</p>\n\t\t\t\t\t\t<div class=\"d-flex align-items-center text-primary\">\n\t\t\t\t\t\t\t<p class=\"me-1\">TWD</p>\n\t\t\t\t\t\t\t<p class=\"fs-2 roboto\">$").concat(item.price, "</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</li>\n\t\t");
   });
   ticketCardArea.innerHTML = str;
+  c3Chart(arr);
 } // render(data);
 // -------------------------------- 篩選區域 ------------------------------------
 
@@ -130,14 +124,66 @@ function addTicket(arr) {
       showConfirmButton: true,
       timer: 1500
     });
-    areaSearch.value = '全部地區';
-    ticketName.value = '';
-    ticketPicture.value = '';
-    ticketRegion.value = '';
-    ticketDescription.value = '';
-    ticketNum.value = '';
-    ticketPrice.value = '';
-    ticketRate.value = '';
+    areaSearch.value = '全部地區'; // ticketName.value = '';
+    // ticketPicture.value = '';
+    // ticketRegion.value = '';
+    // ticketDescription.value = '';
+    // ticketNum.value = '';
+    // ticketPrice.value = '';
+    // ticketRate.value = '';
+
+    var formEl = document.querySelector('.addTicketForm');
+    formEl.reset();
   });
-} // addTicket(data);
+  c3Chart(arr);
+} // c3
+
+
+function c3Chart(arr) {
+  var totalObj = {};
+  arr.forEach(function (item) {
+    if (totalObj[item.area] === undefined) {
+      totalObj[item.area] = 1;
+    } else {
+      totalObj[item.area] += 1;
+    }
+  });
+  var newData = [];
+  var area = Object.keys(totalObj);
+  area.forEach(function (item) {
+    var array = [];
+    array.push(item);
+    array.push(totalObj[item]);
+    newData.push(array);
+  });
+  var chart = c3.generate({
+    bindto: '#chart',
+    data: {
+      columns: newData,
+      type: 'donut',
+      colors: {
+        台北: '#26C0C7',
+        台中: '#5151D3',
+        高雄: '#E68618'
+      }
+    },
+    donut: {
+      title: '套票地區比重',
+      width: '20',
+      label: {
+        show: false
+      }
+    }
+  });
+} // eslint-disable-next-line no-undef
+
+
+axios.get('https://raw.githubusercontent.com/hexschool/js-training/main/travelApi.json').then(function (response) {
+  var data = response.data.data;
+  render(data);
+  areaSelector(data);
+  addTicket(data);
+})["catch"](function (error) {
+  console.log(error);
+});
 //# sourceMappingURL=all.js.map

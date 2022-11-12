@@ -8,10 +8,12 @@
   <title>
     2022 JS 直播班第五周主線
   </title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
-  <link rel="stylesheet" href="./assets/style/all.css">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link href="./assets/c3-0.7.20/c3.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+  <link rel="stylesheet" href="./assets/style/all.css">
+  
 </head>
 
 <body>
@@ -127,16 +129,21 @@
 
 <section class="main-content pt-14 pb-30">
     <div class="container">
-        <div class="search-area d-flex mx-auto align-items-center mb-13">
-            <select name="地區搜尋" class="search-region py-2 px-3 me-8">
-                <option value="地區搜尋" disabled selected hidden>地區搜尋</option>
-                <option value="全部地區">全部地區</option>
-                <option value="台北">台北</option>
-                <option value="台中">台中</option>
-                <option value="高雄">高雄</option>
-                <option value="花蓮">花蓮</option>
-            </select>
-            <p class="search-result">本次搜尋共 3 筆資料</p>
+        <div class="row row-cols-2 mb-13">
+            <div class="col search-area d-flex mx-auto align-items-center">
+                <select name="地區搜尋" class="search-region py-2 px-3 me-8">
+                    <option value="地區搜尋" disabled selected hidden>地區搜尋</option>
+                    <option value="全部地區">全部地區</option>
+                    <option value="台北">台北</option>
+                    <option value="台中">台中</option>
+                    <option value="高雄">高雄</option>
+                    <option value="花蓮">花蓮</option>
+                </select>
+                <p class="search-result">本次搜尋共 3 筆資料</p>
+            </div>
+            <div class="col-6">
+                <div id="chart"></div>
+            </div>
         </div>
 
         <ul class="ticketCard-area row list-unstyled">
@@ -174,6 +181,8 @@
 </section>
 
 
+  <script src="./assets/c3-0.7.20/c3.min.js""></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./assets/js/vendors.js"></script>
